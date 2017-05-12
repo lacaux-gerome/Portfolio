@@ -1,0 +1,1694 @@
+@charset "utf-8";
+
+*{
+   padding: 0;
+   margin: 0;
+}
+
+   *,
+   *:before
+   *;after {
+      box-sizing: border-box;
+   }
+
+.clearfix:before,
+.clearfix:after {
+   content: " ";
+   display: table;
+}
+
+.clearfix:after {
+   clear:both;
+}
+
+body{
+	font-family: 'Cardo', serif;
+    overflow: hidden;
+    background-color: white;
+}
+
+::selection {
+    background-color: #1a1c1f;
+    color: #fff;
+}
+
+::-webkit-scrollbar
+{
+  width: 8px;  /* for vertical scrollbars */
+  height: 8px; /* for horizontal scrollbars */
+}
+::-webkit-scrollbar:hover
+{
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+background-color: rgb(255,90,90);
+}
+
+.mainPage{
+    transition: 1s;
+    display: none;
+}
+
+.containerLoader{
+    height: 100vh;
+    display: block;
+}
+
+.loader {
+  width: 54px;
+  height: 80px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.drawit {
+  fill: transparent;
+  stroke: #000;
+  stroke-width: 2px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1.5s infinite ease-in-out;
+}
+
+.recruiting-r {
+  fill: white;
+  stroke: rgba(0,0,0,0.6);
+  stroke-width: 1px;
+}
+
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.half {
+  position: absolute;
+  top: -40%;
+  bottom: 0;
+  left: -22%;
+  right: 0;
+}
+
+.containerLoader p{
+    font-style: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 27%;
+    font-style: 40px;
+    font-weight: 500;
+    letter-spacing: 2;
+}
+
+.containerLoader p span{
+    font-size: 50px;
+}
+
+/* -----------lignes----------- */
+
+.lines{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
+    transition: all 2s ease-in-out;
+}
+
+.lines > span{
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.11);
+    height: 0%;
+    width: 1px;
+    -webkit-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    animation-delay: 3s;
+    top: 0;
+    left: 0;
+    content: '';
+    animation-name: anim-top-to-bot;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+.lines > span:nth-child(2n +1){
+    -webkit-animation-delay: 5s;
+    -o-animation-delay: 5s;
+    animation-delay: 5s;
+    animation-name: anim-top-to-bot;
+    -webkit-animation-duration:3s;
+    -o-animation-duration: 3s;
+    animation-duration: 3s; 
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards: 
+    -webkit-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes anim-top-to-bot {
+    0%  {height:0%;}
+    33% {height: 100%;}
+    66% {margin-top: 630px;}
+    67%{margin-top: 0px;height: 0%;}
+    100%{height: 100%;opacity: 0;}
+}
+
+
+.lines .l1{
+    left: 12%;
+}
+
+.lines .l2{
+    left: 23%;
+}
+
+.lines .l3{
+    left: 34%;
+}
+
+.lines .l4{
+    left: 45%;
+}
+
+.lines .l5{
+    left: 56%;
+}
+
+.lines .l6{
+    left: 67%
+}
+
+.lines .l7{
+    left: 78%
+}
+
+.lines .l8{
+    left: 89%
+}
+
+/* ---------Menu burger------------ */
+
+.containerGlobalMenu{
+    display: inline-block;
+    position: fixed;    
+    z-index: 9999;
+}
+
+.containerGlobalMenu:hover .containerBurgerMenu div{
+    background-color: rgb(255,90,90);
+}
+
+.containerBurgerMenu{
+	overflow: hidden;
+	cursor: pointer;
+	width: 25px;
+    height: 40px;
+	margin: 7px 0px 0px 10px;
+	float: left;
+    position: relative;
+	padding: 15px;
+}
+
+.containerBurgerMenu div{
+	border-radius: 2px;
+	background-color: #5D5D5D;
+	height: 3px;
+    position: absolute;
+	margin-top: 2px;
+	transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.containerBurgerMenu div:nth-child(1){
+	width: 19px;
+    top: 16px;
+}
+.containerBurgerMenu div:nth-child(2){
+	width: 10px;
+	transform: translateX(15px);
+    top: 21px;
+}
+
+.containerBurgerMenu div:nth-child(3){
+	width: 4px;
+	top: 25px;
+}
+
+/*-----------Menu EFFECT--------------*/
+
+.menu-link {
+    margin-top: 2px;
+    display: inline-block;
+    padding: 14px 5px;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu-link-txt {
+    float: left;
+    position: relative;
+}
+
+.menu-link-default{
+    color: black;
+    width: 100%;
+    font-style: italic;
+    padding: 5px 0;
+    white-space: nowrap;
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow: hidden;
+}
+
+.menu-link-hover{
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    padding: 5px 0;
+    color: rgb(255,90,90);
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+
+.containerGlobalMenu:hover .menu-link-default .menu-link-hover{
+    width: 100%
+}
+
+.strip-anim-container {
+    float: left;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+
+.containerGlobalMenu:hover .menu-link .menu-link-hover {
+    width: 100%;
+}
+
+/* --------Liste caroussel-------- */
+
+.containerCarrousel{
+    position: relative;
+    z-index: 999999;
+    padding: 10px;
+    font-size: 13px;
+    float: right;
+    text-align: center;
+    color: black;
+    transition: .3s;
+    margin-top: 32vh;
+    margin-right: 80px;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+
+}
+
+.containerCarrousel p{
+    margin-top: 20px;
+    color: #ababab;
+    cursor: pointer;
+}
+
+.containerCarrousel p:nth-child(1){
+    margin-top: 0px;
+}
+
+.containerCarrousel .active{
+    font-size: 25px;
+    color: rgb(255,90,90);
+}
+
+/* ---------titre + annim loader---------- */
+
+.containerTitle{
+    width: 500px;
+    position: relative;
+    top: 24vh;
+    left: 34%;
+}
+
+.containerTitle h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes anim-visible{
+    50%{visibility: hidden;}
+    51%{visibility: visible;}
+    100%{visibility: visible;}
+}
+
+.containerTitle h2{
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: 235px;
+    left: 13%;
+    color: #666666;
+    font-family: 'Cardo', serif;
+    font-size:40px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.animh2{
+    position: absolute;
+    top: 240px;
+    left: 12%;
+    height: 47px;
+    width: 360px;
+}
+
+.animh2:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: rgb(255,90,90);
+    z-index: 0;
+    animation-name: animH2-loaderfirst;
+    animation-delay: 0.2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes animH2-loaderfirst {
+    0%  {width: 0px;}
+    50% {width: 360px;}
+    51% {width: 0px;}
+}
+
+.animh2:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: rgb(255,90,90);
+    z-index: 1;
+    animation-name: animH2-loadersecond;
+    animation-delay: 0.2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes animH2-loadersecond {
+    50%  {width: 0px;}
+    51% {width: 360px;}
+    100% {width: 0px;}
+}
+
+.anim{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 100px;
+    width: 510px;
+}
+
+.anim:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #1a1c1f;
+    z-index: 0;
+    animation-name: anim-loaderfirst;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes anim-loaderfirst {
+    0%  {width: 0px;}
+    50% {width: 510px;}
+    51% {width: 0px;}
+}
+
+.anim:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #1a1c1f;
+    z-index: 1;
+    animation-name: anim-loadersecond;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-functionà: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes anim-loadersecond {
+    50%  {width: 0px;}
+    51% {width: 510px;}
+    100% {width: 0px;}
+}
+
+/* -------Description en dessous du titre-------- */
+
+.containerTitle2 {
+    position: relative;
+    top: 45vh;
+    display: inline-block;
+    left: 27%;
+    color: #666666;
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    font-weight: 100;
+    font-style: italic; 
+}
+
+.containerTitle2:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    z-index: 1;
+    animation-name: animNavContainerTitle2;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes animNavContainerTitle2 {
+    0%  {height: 40px;}
+    100% {height: 0px;}
+}
+
+
+/*---------Button annim----------*/
+
+.scrollArrow {
+  position: absolute;
+  top: 93%;
+  cursor: pointer;
+  left: 50%;
+  display: none;
+  padding: 25px;
+  font-family: sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.scrollArrow svg {
+  width: 14px;
+  display: block;
+  margin: 10px auto;
+  position: absolute;
+  top: 65%;
+  left: 44%;
+}
+
+.scrollArrow:hover svg{
+    animation-name: arrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow{
+    0%  {top: 65%;}
+    50% {top: 75%;}
+    100% {top: 65%;}
+}
+/* .scene-scroll-btn-intro-container {
+    bottom: 0;
+    height: 60px;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes anim-bot-to-top-btn {
+    0%   {height:0px;}
+    100% {height: 60px;}
+}
+
+.scene-scroll-btn-container {
+    position: absolute;
+    left: 52.5%;
+    width: 6px;
+    margin-left: -47px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.scene-scroll-btn {
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-name: anim-bot-to-top-btn;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F95759;
+    overflow: hidden;
+}
+
+.scene-scroll-btn:before {
+    background-color: #6d6d6d;
+    transform: translateY(-100%);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.scene-scroll-btn:before, .scene-scroll-btn:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.scene-scroll-btn:after {
+    background-color: #1a1c1f;
+    -webkit-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+    transform: translateY(-200%);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.scene-scroll-btn:hover:before{
+    transform: translateY(0%);
+}
+
+.scene-scroll-btn:hover:after{
+    transform: translateY(0%);
+}
+
+.txt-scroll{
+    position: absolute;
+    left: 51%;
+    bottom: 30px;
+    transform: rotate(90deg);
+    font-style: italic;
+}
+ */
+/* -------Navigation--------- */
+
+.containerNav{
+    display: none;
+    background-color: white;
+    height: 100vh;
+}
+
+.containerNav ul{
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding-top: 9%;
+    left: 10%;
+    width: 300px;
+}
+
+.containerNav li a{
+    color: #595959;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.containerNav li{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.containerNav li a:hover{
+    color: rgb(255,90,90);
+    cursor: pointer;
+}
+
+.containerNav li:nth-child(1){
+    width: 200px;
+}
+
+.containerNav li:nth-child(1) p{
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.containerNav li:nth-child(2){
+    width: 280px;
+}
+
+.containerNav li:nth-child(2) p{
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.containerNav li:nth-child(3){
+    width: 320px;
+}
+
+.containerNav li:nth-child(3) p{
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.containerNav li:nth-child(4){
+    width: 280px;
+}
+
+.containerNav li:nth-child(4) p{
+    visibility: hidden;
+    animation-name: anim-visible;
+    animation-duration: 1.5s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.containerNav li:nth-child(1):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 0;
+    animation-name: animNav1-loaderfirst;
+    animation-delay: 0.2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+.containerNav li:nth-child(1):after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 1;
+    animation-name: animNav1-loadersecond;
+    animation-delay: 0.2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes animNav1-loaderfirst {
+    0%  {width: 0px;}
+    50% {width: 200px;}
+    51% {width: 0px;}
+}
+
+ @keyframes animNav1-loadersecond {
+    50%  {width: 0px;}
+    51% {width: 200px;}
+    100% {width: 0px;}
+}
+
+.containerNav li:nth-child(2):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 0;
+    -webkit-animation-name: animNav2-loaderfirst;
+    -o-animation-name: animNav2-loaderfirst;
+    animation-name: animNav2-loaderfirst;
+    -webkit-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+.containerNav li:nth-child(2):after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 1;
+    -webkit-animation-name: animNav2-loadersecond;
+    -o-animation-name: animNav2-loadersecond;
+    animation-name: animNav2-loadersecond;
+    -webkit-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+ @keyframes animNav2-loaderfirst {
+    0%  {width: 0px;}
+    50% {width: 280px;}
+    51% {width: 0px;}
+}
+
+ @keyframes animNav2-loadersecond {
+    50%  {width: 0px;}
+    51% {width: 280px;}
+    100% {width: 0px;}
+}
+
+.containerNav li:nth-child(3):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 0;
+    -webkit-animation-name: animNav3-loaderfirst;
+    -o-animation-name: animNav3-loaderfirst;
+    animation-name: animNav3-loaderfirst;
+     -webkit-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+.containerNav li:nth-child(3):after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 1;
+    -webkit-animation-name: animNav3-loadersecond;
+    -o-animation-name: animNav3-loadersecond;
+    animation-name: animNav3-loadersecond;
+    -webkit-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-du1.5sration: 1.5s;
+    -o-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+ @keyframes animNav3-loaderfirst {
+    0%  {width: 0px;}
+    50% {width: 320px;}
+    51% {width: 0px;}
+}
+
+ @keyframes animNav3-loadersecond {
+    50%  {width: 0px;}
+    51% {width: 320px;}
+    100% {width: 0px;}
+}
+
+.containerNav li:nth-child(4):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 0;
+    -webkit-animation-name: animNav2-loaderfirst;
+    -o-animation-name: animNav2-loaderfirst;
+    animation-name: animNav2-loaderfirst;
+    -webkit-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-duration:1.5s ;
+    -o-animation-duration:1.5s ;
+    animation-duration:1.5s ;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+}
+
+.containerNav li:nth-child(4):after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 0px;
+    height: 60px;
+    background-color: #202020;
+    z-index: 1;
+    -webkit-animation-name: animNav2-loadersecond;
+    -o-animation-name: animNav2-loadersecond;
+    animation-name: animNav2-loadersecond;
+    -webkit-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-duration:1.5s ;
+    -o-animation-duration:1.5s ;
+    animation-duration:1.5s ;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1); 
+}
+
+.bigLetter{
+    font-family: 'Cardo', serif;
+    font-size: 40em;
+    position: absolute;
+    right: 2%;
+    top: 8vh;
+    opacity: 0.05;
+    color: black;
+    font-weight: 400;
+}
+
+/* .redCube{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0%;
+    height: 100vh;
+    -webkit-animation-name: animCube;
+    -o-animation-name: animCube;
+    animation-name: animCube;
+    -webkit-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration:1.5s ;
+    -o-animation-duration:1.5s ;
+    animation-duration:1.5s ;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    -o-animation-timing-function:cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1); 
+}
+
+@keyframes animBube{
+    0% {width: 0%;}
+    100%{width: 15%;}
+} */
+
+/*-------scoll 2------- */
+
+.scroll2{
+    height: 100vh;
+    margin-top: 100vh;
+    position: relative;
+}
+
+.scroll2 h1{
+    text-align: center;
+    font-family: 'cardo', sans-serif;
+    font-weight: 500;
+    font-size: 4em;
+
+}
+
+.numberOfPage{
+    color: #dddddd;
+    font-size: 10rem;
+    position: absolute;
+    bottom: 15px;
+    left: -30px;
+}
+
+/* --------Page 2 projet duotone----------- */
+
+.scroll2 h1{
+    text-align: center;
+    font-family: 'cardo', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.scroll2 h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    opacity: 0.05;
+}
+
+.scroll2 h2 span{
+    position: absolute;
+    opacity: 0.4;
+    top: 30%;
+    left: 1%;
+    letter-spacing: 0.8em;
+    z-index: 1;
+}
+
+.scroll2 .listDuotone{
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+.scroll2 .alignProject{
+    margin: 0 auto;
+    width: 30%;
+    position: relative;
+    top: 20vh;
+}
+
+.scroll2 .containerDuotone{
+    width: 98%;
+    margin-top: 5px;
+    margin-left: 1%;
+    height: 300px;
+    background-color: #fe4469;
+    position: absolute;
+    z-index: 9999;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll2 .containerDuotone:hover{
+    width: 100%;
+    height: 310px;
+    margin-left: 0%;
+    margin-top: 0%;
+    -webkit-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+}
+
+.scroll2 .containerDuotone:hover .barDuotone{
+    -webkit-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+}
+/* 
+.containerDuotone:hover h3 span{
+    -webkit-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+} */
+
+
+.scroll2 .shadowContainerDuotone{
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: 9998;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll2 .containerDuotone h3{
+    color: #404040;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    width: 200%;
+    position: absolute;
+    top: 20%;
+    left: -16%;
+    font-weight: 600;
+}
+
+.scroll2 .containerDuotone h3 span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #ffe50f;
+}
+
+.scroll2 .barDuotone{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 17%;
+    height: 8px;
+    background-color: #ffe50f;
+}
+
+.scroll2 .buttonDiscover{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 4%;
+    top: 87%;
+    color: white;
+    display: inline-block;
+}
+
+.scroll2 .buttonDiscover:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.scroll2 .containerDuotone:hover .buttonDiscover:after{
+    width: 100%;
+}
+
+/*-------scoll 3------- */
+
+.scroll3{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.scroll3 h1{
+    text-align: center;
+    font-family: 'cardo', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.scroll3 h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    opacity: 0.05;
+}
+
+.scroll3 h2 span{
+    position: absolute;
+    opacity: 0.4;
+    top: 30%;
+    left: 4%;
+    letter-spacing: 0.8em;
+    z-index: 1;
+}
+
+.scroll3 .listGalerie{
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+.scroll3 .alignProject{
+    margin: 0 auto;
+    width: 30%;
+    position: relative;
+    top: 20vh;
+}
+
+.scroll3 .containerGalerie{
+    width: 98%;
+    margin-top: 5px;
+    margin-left: 1%;
+    height: 300px;
+    background-color: rgb(125,146,255);
+    position: absolute;
+    z-index: 9999;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll3 .containerGalerie:hover{
+    width: 100%;
+    height: 310px;
+    margin-left: 0%;
+    margin-top: 0%;
+    -webkit-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+}
+
+.scroll3 .containerGalerie:hover .barGalerie{
+    -webkit-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+}
+
+.scroll3 .shadowContainerGalerie{
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: 9998;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll3 .containerGalerie h3{
+    color: #404040;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    width: 200%;
+    position: absolute;
+    top: 20%;
+    left: -26%;
+    font-weight: 600;
+}
+
+.scroll3 .containerGalerie h3 span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #ebd4b2;
+}
+
+.scroll3 .barGalerie{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 17%;
+    height: 8px;
+    background-color: #ebd4b2;
+}
+
+.scroll3 .buttonDiscover{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 4%;
+    top: 87%;
+    color: white;
+    display: inline-block;
+}
+
+.scroll3 .buttonDiscover:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.scroll3 .containerGalerie:hover .buttonDiscover:after{
+    width: 100%;
+}
+
+/*-------scoll 4------- */
+
+.scroll4{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.scroll4 h1{
+    text-align: center;
+    font-family: 'cardo', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.scroll4 h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    opacity: 0.05;
+}
+
+.scroll4 h2 span{
+    position: absolute;
+    opacity: 0.4;
+    top: 30%;
+    left: 1%;
+    letter-spacing: 0.8em;
+    z-index: 1;
+}
+
+.scroll4 .listCaveman{
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+.scroll4 .alignProject{
+    margin: 0 auto;
+    width: 30%;
+    position: relative;
+    top: 20vh;
+}
+
+.scroll4 .containerCaveman{
+    width: 98%;
+    margin-top: 5px;
+    margin-left: 1%;
+    height: 300px;
+    background-color: #f5a54a;
+    position: absolute;
+    z-index: 9999;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll4 .containerCaveman:hover{
+    width: 100%;
+    height: 310px;
+    margin-left: 0%;
+    margin-top: 0%;
+    -webkit-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+}
+
+.scroll4 .containerCaveman:hover .barCaveman{
+    -webkit-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+}
+
+.scroll4 .shadowContainerCaveman{
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: 9998;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll4 .containerCaveman h3{
+    color: #404040;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    width: 200%;
+    position: absolute;
+    top: 20%;
+    left: -26%;
+    font-weight: 600;
+}
+
+.scroll4 .containerCaveman h3 span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #d71c05;
+}
+
+.scroll4 .barCaveman{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 17%;
+    height: 8px;
+    background-color: #d71c05;
+}
+
+.scroll4 .buttonDiscover{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 4%;
+    top: 87%;
+    color: white;
+    display: inline-block;
+}
+
+.scroll4 .buttonDiscover:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.scroll4 .containerCaveman:hover .buttonDiscover:after{
+    width: 100%;
+}
+
+/* scroll 5*/
+
+.scroll5{
+    height: 100vh;
+    margin-top: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+.scroll5 h1{
+    text-align: center;
+    font-family: 'cardo', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.scroll5 h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    opacity: 0.05;
+}
+
+.scroll5 h2 span{
+    position: absolute;
+    opacity: 0.4;
+    top: 30%;
+    left: 1%;
+    letter-spacing: 0.8em;
+    z-index: 1;
+}
+
+.scroll5 .listIncomming{
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+.scroll5 .alignProject{
+    margin: 0 auto;
+    width: 30%;
+    position: relative;
+    top: 20vh;
+}
+
+.scroll5 .containerIncomming{
+    width: 98%;
+    margin-top: 5px;
+    margin-left: 1%;
+    height: 300px;
+    background-color: rgba(225,225,225,1);
+    position: absolute;
+    z-index: 9999;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll5 .containerIncomming:hover{
+    width: 100%;
+    height: 310px;
+    margin-left: 0%;
+    margin-top: 0%;
+    -webkit-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+    box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
+}
+
+.scroll5 .containerIncomming:hover .barIncomming{
+    -webkit-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+    box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
+}
+
+.scroll5 .shadowContainerIncomming{
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: 9998;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.scroll5 .containerIncomming h3{
+    color: #404040;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 65px;
+    width: 200%;
+    position: absolute;
+    top: 20%;
+    left: -15%;
+    font-weight: 600;
+}
+
+.scroll5 .containerIncomming h3 span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: rgb(70,70,70);
+}
+
+.scroll5 .barIncomming{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 17%;
+    height: 8px;
+    background-color: rgb(70,70,70);;
+}
+
+.scroll5 .buttonDiscover{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    position: relative;
+    left: 4%;
+    top: 87%;
+    color: white;
+    display: inline-block;
+}
+
+.scroll5 .buttonDiscover:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.scroll5 .containerIncomming:hover .buttonDiscover:after{
+    width: 100%;
+}
+
+/* Page about */
+
+.containerContact{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+.containerContact h2{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 9em;
+    font-weight: 400;
+    color: rgb(60,60,60);
+}
+
+.containerContact h2 span:nth-child(1){
+    position: absolute;
+    top: 15vh;
+    left: -3%;
+}
+
+.containerContact h2 span:nth-child(2){
+    position: absolute;
+    top: 38vh;
+    left: 13%;
+}
+
+.containerContact .containerLinksContact{
+    width: 30%;
+    height: 300px;
+    position: absolute;
+    top: 35vh;
+    left: 55%;
+}
+
+.containerLinksContact ul li{
+    list-style: none;
+}
+
+.containerContact .containerLinksContact a{
+    color: black;
+    text-decoration: none;
+}
+
+.aboutBar{
+    margin-top: 5px;
+    height: 3px;
+    width: 3%;
+    background-color: black;
+    margin-bottom: 10px;
+    -webkit-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
+    background-color: rgb(255,90,90);
+}
+
+.containerLinksContact li:nth-child(1) a:hover .aboutBar{
+    width: 6.5%;
+}
+.containerLinksContact li:nth-child(2) a:hover .aboutBar{
+    width: 13%;
+}
+.containerLinksContact li:nth-child(3) a:hover .aboutBar{
+    width: 18%;
+}
+.containerLinksContact li:nth-child(4) a:hover .aboutBar{
+    width: 10%;
+}
+
+.workTogether{
+    text-decoration: none;
+    color: rgb(60,60,60);
+    font-size: 1.3em;
+    position: absolute;
+    font-weight: 400;
+    top: 82%;
+    right: 8%;
+    font-family: 'cardo', sans-serif;
+    color: rgb(60,60,60);
+    transition: 0.3s;
+}
+
+.workTogether span{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 2.2em;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.workTogether:hover{
+    color: rgb(255,90,90);
+}
+
+/* --------------------Page about Me----------------- */
+
+.containerAbout{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+.containerAbout p{
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 18vh;
+    margin-left: 20%;
+    width: 60%;
+    line-height: 2em;
+}
+
+.containerAbout p span{
+    position: relative;
+    transition: ease-in 0.3s;
+    padding: 0 5px 0 5px;
+}
+
+.containerAbout p span:before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #F95759;
+    transition: ease-in 0.3s;
+}
+
+.containerAbout p span:hover:before{
+    height: 40px;
+}
+
+.containerAbout p span:hover{
+    color: white;
+    transition: ease-in 0.3s;
+}
