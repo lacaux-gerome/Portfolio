@@ -35,7 +35,7 @@ function function_name(argument) {
 		timer = setTimeout(function (){
 			console.log('in timer');
 			done = false;
-		}, 50);
+		}, 100);
 		
 	});
 
