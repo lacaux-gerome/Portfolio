@@ -346,7 +346,7 @@ background-color: rgb(255,90,90);
 .containerTitle{
     width: 500px;
     position: relative;
-    top: 24vh;
+    top: 20vh;
     left: 34%;
 }
 
@@ -376,8 +376,8 @@ background-color: rgb(255,90,90);
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
     position: absolute;
-    top: 235px;
-    left: 13%;
+    top: 38vh;
+    left: 11%;
     color: #666666;
     font-family: 'Cardo', serif;
     font-size:40px;
@@ -388,10 +388,10 @@ background-color: rgb(255,90,90);
 
 .animh2{
     position: absolute;
-    top: 240px;
-    left: 12%;
+    top: 39vh;
+    left: 11%;
     height: 47px;
-    width: 360px;
+    width: 400px;
 }
 
 .animh2:before{
@@ -412,7 +412,7 @@ background-color: rgb(255,90,90);
 
  @keyframes animH2-loaderfirst {
     0%  {width: 0px;}
-    50% {width: 360px;}
+    50% {width: 400px;}
     51% {width: 0px;}
 }
 
@@ -434,7 +434,7 @@ background-color: rgb(255,90,90);
 
  @keyframes animH2-loadersecond {
     50%  {width: 0px;}
-    51% {width: 360px;}
+    51% {width: 400px;}
     100% {width: 0px;}
 }
 
@@ -493,8 +493,9 @@ background-color: rgb(255,90,90);
 .containerTitle2 {
     position: relative;
     top: 45vh;
-    display: inline-block;
-    left: 27%;
+    display: block;
+    text-align: center;
+    left: 4.7%;
     color: #666666;
     font-family: 'Cardo', serif;
     font-size: 20px;
@@ -1008,13 +1009,17 @@ background-color: rgb(255,90,90);
     left: -30px;
 }
 
-/* --------Page 2 projet duotone----------- */
+/* --------Page 2 projet Larchitecture----------- */
 
 .scroll2 h1{
     text-align: center;
     font-family: 'cardo', sans-serif;
     font-weight: 600;
     font-size: 4em;
+}
+
+.scroll2 a{
+    text-decoration: none;
 }
 
 .scroll2 h2{
@@ -1033,7 +1038,7 @@ background-color: rgb(255,90,90);
     z-index: 1;
 }
 
-.scroll2 .listDuotone{
+.scroll2 .listLarchitecture{
     list-style: none;
     display: inline-block;
     text-decoration: none;
@@ -1048,7 +1053,7 @@ background-color: rgb(255,90,90);
     top: 20vh;
 }
 
-.scroll2 .containerDuotone{
+.scroll2 .containerLarchitecture{
     width: 98%;
     margin-top: 5px;
     margin-left: 1%;
@@ -1060,7 +1065,7 @@ background-color: rgb(255,90,90);
     cursor: pointer;
 }
 
-.scroll2 .containerDuotone:hover{
+.scroll2 .containerLarchitecture:hover{
     width: 100%;
     height: 310px;
     margin-left: 0%;
@@ -1070,7 +1075,7 @@ background-color: rgb(255,90,90);
     box-shadow: 3px 5px 12px 0px rgba(0,0,0,0.29);
 }
 
-.scroll2 .containerDuotone:hover .barDuotone{
+.scroll2 .containerLarchitecture:hover .barLarchitecture{
     -webkit-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
     -moz-box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
     box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.15);
@@ -1083,7 +1088,7 @@ background-color: rgb(255,90,90);
 } */
 
 
-.scroll2 .shadowContainerDuotone{
+.scroll2 .shadowContainerLarchitecture{
     width: 100%;
     height: 310px;
     position: absolute;
@@ -1094,24 +1099,24 @@ background-color: rgb(255,90,90);
     cursor: pointer;
 }
 
-.scroll2 .containerDuotone h3{
+.scroll2 .containerLarchitecture h3{
     color: #404040;
     font-family: 'Montserrat', sans-serif;
-    font-size: 65px;
-    width: 200%;
+    font-size: 4em;
+    width: 300%;
     position: absolute;
     top: 20%;
-    left: -16%;
+    left: -40%;
     font-weight: 600;
 }
 
-.scroll2 .containerDuotone h3 span{
+.scroll2 .containerLarchitecture h3 span{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #ffe50f;
 }
 
-.scroll2 .barDuotone{
+.scroll2 .barLarchitecture{
     position: absolute;
     top: 50%;
     left: 80%;
@@ -1141,7 +1146,7 @@ background-color: rgb(255,90,90);
     transition: 0.4s;
 }
 
-.scroll2 .containerDuotone:hover .buttonDiscover:after{
+.scroll2 .containerLarchitecture:hover .buttonDiscover:after{
     width: 100%;
 }
 
@@ -1151,6 +1156,10 @@ background-color: rgb(255,90,90);
     height: 100vh;
     width: 100%;
     position: relative;
+}
+
+.scoll a{
+    text-decoration: none;
 }
 
 .scroll3 h1{
@@ -1289,6 +1298,10 @@ background-color: rgb(255,90,90);
     position: absolute;
 }
 
+.scroll4{
+    text-decoration: none;
+}
+
 .scroll4 h1{
     text-align: center;
     font-family: 'cardo', sans-serif;
@@ -1373,7 +1386,7 @@ background-color: rgb(255,90,90);
     width: 200%;
     position: absolute;
     top: 20%;
-    left: -26%;
+    left: -35%;
     font-weight: 600;
 }
 
