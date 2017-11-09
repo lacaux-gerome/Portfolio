@@ -479,7 +479,7 @@ background-color: rgb(255,90,90);
     animation-name: anim-loadersecond;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    animation-timing-functionà: cubic-bezier(0.54, -0.02, 0.43, 1.1);
+    animation-timing-function: cubic-bezier(0.54, -0.02, 0.43, 1.1);
 }
 
  @keyframes anim-loadersecond {
